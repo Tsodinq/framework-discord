@@ -6,4 +6,5 @@ import {
 
 export interface Command extends ChatInputApplicationCommandData {
   run: (client: Client, interaction: CommandInteraction) => void;
+  ephemeral?: boolean;
 }

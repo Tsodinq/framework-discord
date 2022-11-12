@@ -36,7 +36,9 @@ const handleSlashCommand = async (
     });
   }
 
-  await interaction.deferReply();
+  await interaction.deferReply({
+    ephemeral: slashCommand.ephemeral,
+  });
 
   slashCommand.run(client, interaction);
 };
