@@ -33,8 +33,18 @@ export const Approve: Command = {
 
     if (!user) {
       await interaction.followUp({
-        content: "That user is not in the database, this is not normal.",
+        content:
+          "I've created a new database entry for this user. Please run the command again.",
       });
+
+      await prisma.guildMember.create({
+        data: {
+          userId: String(userId),
+          guildId: String(interaction.guildId),
+          canGenerateInvite: false,
+        },
+      });
+
       return;
     }
 
