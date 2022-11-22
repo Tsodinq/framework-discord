@@ -22,9 +22,13 @@ export const Key: Command = {
       },
     });
 
-    if (Number(generated?.generatedInviteKeys) >= 5) {
+    if (
+      Number(generated?.generatedInviteKeys) >= 5 ||
+      !generated?.canGenerateInvite
+    ) {
       await interaction.followUp({
-        content: "You have already generated 5 invite keys.",
+        content:
+          "You are ineligible to generate invite keys. Please contact a staff member.",
       });
       return;
     }
