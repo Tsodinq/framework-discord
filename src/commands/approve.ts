@@ -1,14 +1,12 @@
 import {
-  CommandInteraction,
-  Client,
-  ApplicationCommandType,
-  Colors,
   ApplicationCommandOptionType,
+  ApplicationCommandType,
+  Client,
+  Colors,
+  CommandInteraction,
 } from "discord.js";
-import fetch from "node-fetch";
-import prisma from "../prisma";
-import { API_BASE } from "../api";
 import { Command } from "../command";
+import prisma from "../prisma";
 
 export const Approve: Command = {
   name: "approve",

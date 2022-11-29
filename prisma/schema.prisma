@@ -8,13 +8,25 @@ datasource db {
 }
 
 model GuildMember {
-  id                  String   @id @default(cuid())
+  id                  String             @id @default(cuid())
   guildId             String
   userId              String
-  createdAt           DateTime @default(now())
-  updatedAt           DateTime @updatedAt
-  generatedInviteKeys Int      @default(0)
-  canGenerateInvite   Boolean  @default(false)
+  createdAt           DateTime           @default(now())
+  updatedAt           DateTime           @updatedAt
+  generatedInviteKeys Int                @default(0)
+  canGenerateInvite   Boolean            @default(false)
+  soodamreStaff       Boolean            @default(false)
+  staffContactInfo    StaffContactInfo[] @relation("staffContactInfo")
 
   @@unique([guildId, userId])
+}
+
+model StaffContactInfo {
+  id        String      @id @default(cuid())
+  user      GuildMember @relation("staffContactInfo", fields: [userId], references: [id])
+  userId    String
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+  name      String
+  value     String
 }
