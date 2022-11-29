@@ -69,7 +69,7 @@ export const StaffInfo: Command = {
         }))
       )
       .setFooter({
-        text: "This bot is made with ❤️ by Soodam.re and contributors.",
+        text: "This bot is made by Vice President, CK_Gin0.",
       });
 
     await interaction.followUp({
