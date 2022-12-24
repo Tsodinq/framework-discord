@@ -1,4 +1,7 @@
 # Framework Discord Bot
+
+[![CodeFactor](https://www.codefactor.io/repository/github/tsodinq/framework-discord/badge)](https://www.codefactor.io/repository/github/tsodinq/framework-discord)
+
 This repository contains the source code for the bot of the [Framework Discord server](https://discord.gg/g88JS6Tmte).
 
 ## Technologies
